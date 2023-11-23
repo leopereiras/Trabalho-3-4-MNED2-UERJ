@@ -17,7 +17,11 @@ vetorEspaco = zeros(1,divEspaco); % Inicializando vetor da malha espacial.
 oldVet = zeros(1,divEspaco); % Inicializando vetor da concentração antiga.
 newVet = zeros(1,divEspaco); % Inicializando vetor da concentração nova.
 C = (u*deltaT)/(deltaX);
+thetaVet = ones(1,divEspaco);
 
+psiVanleer = @(thetaVet) (thetaVet + abs(thetaVet)) ./ (1 + abs(thetaVet))
+psiHquick = @(thetaVet) 2 * (theta + abs(thetaVet)) / 3;
+thetamod = psiVanleer(thetaVet)
 %Preenchendo vetores com as concentra��es
 for i = 1:divEspaco
     oldVet(i)=cb;
