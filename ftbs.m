@@ -18,7 +18,7 @@ end
     for k =1:divEspaco
         y1(k) = newVet(k);
     end
-plot(vetorEspaco, newVet,'r');
+plot(vetorEspaco, newVet,'g');
 title("Equação de Advecção-Difusão FTBS");
 grid on
 hold on
