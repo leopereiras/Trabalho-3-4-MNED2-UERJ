@@ -2,15 +2,17 @@
 ca = 10;
 cb = 5;
 cinj = 10;
-cini = 15;
-Lx = 90;
+cini = 20;
+Lx = 500;
 alfa = 0.000008;
-tempo = 10;
-divEspaco = 10;
-divTempo = 1;
-u = 0.001;
+tempo = 1000;
+divEspaco = 700;
+divTempo = 100;
+u = 0.01;
+phi = 15;
 deltaX = Lx / divEspaco; % Número de divisões espaciais.
-deltaT = tempo / divTempo;  % Número de divisões temporais.
+%deltaT = tempo / divTempo;  % Número de divisões temporais.
+deltaT = 0.9*deltaX/u
 deltaTMAX = (1)/(((2*alfa)/(deltaX^2)) + (u/deltaX));
 aux = 0; % Definindo aux = 0 globalmente.
 vetorEspaco = zeros(1,divEspaco); % Inicializando vetor da malha espacial.
@@ -21,12 +23,14 @@ thetaVet = ones(1,divEspaco);
 
 psiVanleer = @(thetaVet) (thetaVet + abs(thetaVet)) ./ (1 + abs(thetaVet));
 psiHquick = @(thetaVet) (2 * (thetaVet + abs(thetaVet))) ./ (3 + thetaVet);
+
 min1 = min(1,2*thetaVet);
 min2 = min(2,thetaVet);
 min3 = min(min1,min2);
 psiSuperbee = @(thetaVet) max(0,min3);
 psiSuperbeeteste = @(thetaVet) max(0,min(1,2*thetaVet),min(2,thetaVet))
-%thetamod = psiVanleer(thetaVet)
+
+
 %Preenchendo vetores com as concentra��es
 for i = 1:divEspaco
     oldVet(i)=cb;
