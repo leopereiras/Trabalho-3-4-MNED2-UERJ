@@ -1,5 +1,6 @@
 function [y1] = ftbs(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
 tic
+entradaDados
 TempoProcessamento = 0;
 
 while aux < tempo 
@@ -18,6 +19,7 @@ end
     for k =1:divEspaco
         y1(k) = newVet(k);
     end
+    figure;
 plot(vetorEspaco, newVet,'g');
 title("Equação de Advecção-Difusão FTBS");
 grid on

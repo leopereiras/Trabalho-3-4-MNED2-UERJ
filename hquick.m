@@ -1,8 +1,5 @@
-function [y3] = hquick(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet)
+function [y3] = hquick(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet,psiHquick)
 tic
-clear
-clc
-entradaDados
 TempoProcessamento = 0;
  g =2;
 while aux < tempo 

@@ -3,10 +3,10 @@ ca = 10;
 cb = 5;
 cinj = 10;
 cini = 20;
-Lx = 10000;
+Lx = 100;
 %alfa = 0.000008;
 tempo = 10;
-divEspaco = 1000;
+divEspaco = 200;
 divTempo = 50;
 u = 0.001;
 smax = 15;
@@ -25,11 +25,17 @@ thetaVet = ones(1,divEspaco);
 psiVanleer = @(thetaVet) (thetaVet + abs(thetaVet)) ./ (1 + abs(thetaVet));
 psiHquick = @(thetaVet) (2 * (thetaVet + abs(thetaVet))) ./ (3 + thetaVet);
 
-min1 = min(1,2*thetaVet);
-min2 = min(2,thetaVet);
-min3 = min(min1,min2);
-psiSuperbee = @(thetaVet) max(0,min3);
-psiSuperbeeteste = @(thetaVet) max(0,min(1,2*thetaVet),min(2,thetaVet))
+% min1 = min(1,2*thetaVet);
+% min2 = min(2,thetaVet);
+% min3 = min(min1,min2);
+% max1 = max(min1,min2);
+% psiSuperbee = @(thetaVet) max(0,max1);
+%psiSuperbeeteste = @(thetaVet) max(0,min(1,2*thetaVet),min(2,thetaVet));
+
+psiSuperbee = @(thetaVet) ...
+    (thetaVet <= 0.5) .* max(0, min(2*thetaVet, 1)) + ...
+    (thetaVet > 0.5) .* max(0, min(thetaVet, 2*(1-thetaVet)));
+
 
 
 %Preenchendo vetores com as concentrações
