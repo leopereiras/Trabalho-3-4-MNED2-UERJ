@@ -1,5 +1,6 @@
 function [y6] = burgersNaoConservativa(deltaTB,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
 tic
+entradaDados
 TempoProcessamento = 0;
 while aux < tempo
       if (aux>tempo/2)

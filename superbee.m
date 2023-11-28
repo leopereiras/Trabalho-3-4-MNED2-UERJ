@@ -1,5 +1,6 @@
 function [y4] = superbee(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet,psiSuperbee)
 tic
+entradaDados
 TempoProcessamento = 0;
  g =2;
 while aux < tempo 
@@ -29,7 +30,6 @@ end
     for k =1:divEspaco
         y4(k) = newVet(k);
     end
-    figure
 plot(vetorEspaco, newVet,'r');
 title("Equação de Advecção-Difusão Superbee");
 grid on

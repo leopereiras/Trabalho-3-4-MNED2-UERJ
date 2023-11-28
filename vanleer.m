@@ -1,5 +1,6 @@
 function [y2] = vanleer(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet,psiVanleer)
 tic
+entradaDados
 TempoProcessamento = 0;
  g =2;
 while aux < tempo 
@@ -29,7 +30,6 @@ end
     for k =1:divEspaco
         y2(k) = newVet(k);
     end
-    figure
 plot(vetorEspaco, newVet,'r');
 title("Equação de Advecção-Difusão van Leer");
 grid on
