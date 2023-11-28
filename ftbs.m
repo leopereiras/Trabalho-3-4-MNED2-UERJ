@@ -1,4 +1,4 @@
-function [y1] = ftbs(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C)
+function [y1] = ftbs(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
 tic
 TempoProcessamento = 0;
 
@@ -22,7 +22,7 @@ plot(vetorEspaco, newVet,'g');
 title("Equação de Advecção-Difusão FTBS");
 grid on
 hold on
-texto_anotacao = sprintf('DeltaT: %.3f\nDeltaTMAX: %.3f', deltaT, deltaTMAX);
+texto_anotacao = sprintf('DeltaT: %.3f', deltaT);
 annotation('textbox',[0.63,0.2,0.2,0.7] ,'String',texto_anotacao,'FitBoxToText','on');
 xlabel("Lx");
 ylabel("Concentração");

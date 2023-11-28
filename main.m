@@ -1,21 +1,19 @@
 clc
 clear
 entradaDados
-%FTBS = ftbs(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C);
-%vanleer = vanleer(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C,thetaVet);
-%hquick = hquick(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C,thetaVet)
+%FTBS = ftbs(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C);
+%vanleer = vanleer(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet);
+%hquick = hquick(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet)
 %superbee = superbee(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C,thetaVet)
-%burgersConservativa = burgersConservativa(deltaT,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C)
-   
+%burgersConservativa = burgersConservativa(deltaTB,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
+%burgersNaoConservativa = burgersNaoConservativa(deltaTB,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C);
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TODO 
-%SUPERBEER
-%TRAB4
-%TEMPO NO GRAFICO
+%TO DO 
+% FTBS CONTRA OS OUTROS GRAFICOS
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%TODOING
+%TO DOING
 %SUPERBEER
-%TRAB4

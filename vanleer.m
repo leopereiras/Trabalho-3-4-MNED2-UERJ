@@ -1,4 +1,4 @@
-function [y2] = vanleer(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,deltaTMAX,C,thetaVet)
+function [y2] = vanleer(deltaT,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C,thetaVet)
 tic
 clear
 clc
@@ -16,7 +16,7 @@ while aux < tempo
            if (oldVet(g) ~= oldVet(g+1))
                thetaVet(g) = (oldVet(g)-oldVet(g-1))/(oldVet(g+1)-oldVet(g));
            else
-                thetaVet(g) = (oldVet(g)-oldVet(g-1))/(oldVet(j+1)*0.000009-oldVet(j));               
+                thetaVet(g) = (oldVet(g)-oldVet(g-1))/(oldVet(j+1)*0.000009-oldVet(j)); % Garantindo que nao sera /0          
             end
           g = g+1;
        end

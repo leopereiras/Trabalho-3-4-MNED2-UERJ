@@ -1,4 +1,4 @@
-function [y5] = burgersConservativa(deltaTB,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
+function [y6] = burgersNaoConservativa(deltaTB,deltaX,tempo,aux,cinj,cini,newVet,oldVet,divEspaco,vetorEspaco,C)
 tic
 TempoProcessamento = 0;
 while aux < tempo
@@ -7,7 +7,7 @@ while aux < tempo
      end
     newVet(1) = oldVet(1) - (C)*(2*(oldVet(1)-cini)); %Contorno Esquerdo
     for j = 2:divEspaco-1
-        newVet(j) = (oldVet(j) - (deltaTB/deltaX)*((1/2)*(oldVet(j)^2) - (1/2)*(oldVet(j-1)^2)))
+        newVet(j) = (oldVet(j) - oldVet(j)*(deltaTB/deltaX)*((oldVet(j)) - (oldVet(j-1))));
     end
     oldVet=newVet;
     aux = aux + deltaTB;
@@ -15,10 +15,10 @@ while aux < tempo
 end
     
     for k =1:divEspaco
-        y5(k) = newVet(k);
+        y6(k) = newVet(k);  
     end
 plot(vetorEspaco, newVet,'r');
-title("Equação de Burgers invíscida Método Conservativo");
+title("Equação de Burgers invíscida Método Não Conservativo");
 grid on
 hold on
 texto_anotacao = sprintf('DeltaT: %.3f', deltaTB);
@@ -32,11 +32,12 @@ ylabel("Concentração");
 %e comentar o plot de cima
 
 % plot(vetorEspaco, newVet,'g');
-% title("Equação de Advecção-Difusão FTBS");
+% title("Equação de Burgers invíscida Método Não Conservativo");
 % grid on
 % hold on
 % xlabel("Lx");
 % ylabel("Concentração");
+
 
 
 
