@@ -33,7 +33,7 @@ ylabel("Concentração");
 %e comentar o plot de cima
 
 % plot(vetorEspaco, newVet,'g');
-% title("Equação de Advecção-Difusão FTBS");
+% title("Equação de Burgers invíscida Método Conservativo");
 % grid on
 % hold on
 % xlabel("Lx");
